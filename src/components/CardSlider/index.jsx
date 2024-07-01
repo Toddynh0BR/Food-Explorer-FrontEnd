@@ -17,7 +17,7 @@ import Mask11 from "../../assets/Mask group-11.png";
 
 
 
-import { Card } from '../Card'; // Verifique se o caminho para o componente Card está correto
+import { Card } from '../Card'; 
 
 
 const Styles = styled.main`
@@ -105,35 +105,35 @@ function CardSlider({type, isadmin}){
   ],
   sobremesas: [
     {
-      id: 1,
+      id: 6,
       title: 'Prugna Pie >',
       image: Mask4,
       description: 'Torta de ameixa com massa amanteigada, polvilho em açúcar.',
       price: 'R$ 79,97',
     },
     {
-      id: 2,
+      id: 7,
       title: 'Peachy pastrie >',
       image: Mask5,
       description: 'Delicioso folheado de pêssego com folhas de hortelã.',
       price: 'R$ 32,97',
     },
     {
-      id: 3,
+      id: 8,
       title: 'Macarons  >',
       image: Mask6,
       description: 'Farinha de amêndoas, manteiga, claras e açúcar.',
       price: 'R$ 79,97',
     },
     {
-      id: 4,
+      id: 9,
       title: 'Bolo de damasco  >',
       image: Mask7,
       description: 'Damascos frescos em uma massa sem glúten.',
       price: 'R$ 19,97',
     },
     {
-      id: 5,
+      id: 10,
       title: 'Spaguetti Gambe >',
       image: Mask2,
       description: 'Massa fresca com camarões e pesto.',
@@ -143,35 +143,35 @@ function CardSlider({type, isadmin}){
   ],
   bebidas: [
     {
-      id: 1,
+      id: 11,
       title: 'Espresso >',
       image: Mask9,
       description: 'Café cremoso feito na temperatura e pressões perfeitas.',
       price: 'R$ 15,97',
     },
     {
-      id: 2,
+      id: 12,
       title: 'Suco de maracujá >',
       image: Mask8,
       description: 'Suco de maracujá gelado, cremoso, docinho.',
       price: 'R$ 13,97',
     },
     {
-      id: 3,
+      id: 13,
       title: "Tè d'autunno >",
       image: Mask10,
       description: 'Chá de anis, canela e limão. Sinta o outono italiano.',
       price: 'R$ 19,97',
     },
     {
-      id: 4,
+      id: 14,
       title: 'Pomo bourbon  >',
       image: Mask11,
       description: 'Maçã, whisky, canela. On the rocks.',
       price: 'R$ 79,97',
     },
     {
-      id: 5,
+      id: 15,
       title: 'Spaguetti Gambe >',
       image: Mask2,
       description: 'Massa fresca com camarões e pesto.',
@@ -196,6 +196,7 @@ function CardSlider({type, isadmin}){
       {itemsToShow.map((item) => (
         <SwiperSlide key={item.id} >
           <Card
+            id={item.id}
             img={item.image}
             title={item.title}
             description={item.description}

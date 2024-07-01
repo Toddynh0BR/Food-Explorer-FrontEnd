@@ -1,5 +1,6 @@
 import { Container, Main, Decoration, Plates, Slide } from "./style";
 
+
 import Food from "../../assets/Food.png";
 
 import {  Header } from "../../components/header";

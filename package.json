@@ -1,4 +1,5 @@
 {
+  "homepage": "https://toddynh0br.github.io/Food-Explorer-FrontEnd/",
   "name": "foodexplorer",
   "private": true,
   "version": "0.0.0",
@@ -7,7 +8,9 @@
     "start": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "jquery": "^3.7.1",

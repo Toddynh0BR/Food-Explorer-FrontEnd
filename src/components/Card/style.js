@@ -38,27 +38,32 @@ filter: brightness(135%);
 img {
 width: 17.6rem;
 height: 17.6rem;
+margin-bottom: 1.5rem;
 }
 
 h2 {
  font-family: 'Poppins', sans-serif;
  font-size: 2.4rem;
  font-weight: bold;
+ margin-bottom: 1.5rem;
 }
 p {
  font-size: 1.4rem;
  font-weight: 300;
  color: #C4C4CC;
+ margin-bottom: 1.5rem;
 }
 span {
  font-size: 3.2rem;
  font-weight: 300;
  color: #82F3FF;
+ margin-bottom: 1.5rem;
 }
 `
 
 
 export const Functions = styled.div`
+
  display: ${props => (props.isadmin ? 'none' : 'flex')};
  align-items: center;
  gap: 1rem;
@@ -87,5 +92,8 @@ button {
  height: 4.8rem;
  padding: .5rem 1.5rem;
  cursor: pointer;
+ p {
+ margin-bottom: 0;
+ }
 }
 `

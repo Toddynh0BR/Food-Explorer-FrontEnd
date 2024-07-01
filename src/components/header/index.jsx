@@ -7,6 +7,8 @@ import Polygon2 from "../../assets/Polygon2.svg";
 import { FiLogOut, FiSearch } from "react-icons/fi";
 import { Button } from "../button";
 
+import { Link } from "react-router-dom";
+
 const Title = styled.div`
   display: flex;
   align-items: center;
@@ -38,6 +40,13 @@ const Title = styled.div`
 `;
 
 export function Header({ title, icon: Icon, isadmin }) {
+let route = "#"
+  if(isadmin == true){
+    route = `/addplate`
+  }else{
+    route = "#"
+  }
+
  return (
     <Container isadmin={isadmin}>
       <Title isadmin={isadmin}>
@@ -55,7 +64,7 @@ export function Header({ title, icon: Icon, isadmin }) {
       
 
       <div>
-      <Button icon={Icon} title={title} />
+      <Link to={route}><Button icon={Icon} title={title} /></Link>
       <FiLogOut id="out"/>
       </div>
     </Container>

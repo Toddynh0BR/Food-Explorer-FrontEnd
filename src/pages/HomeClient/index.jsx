@@ -3,6 +3,7 @@ import { PiReceiptBold } from "react-icons/pi";
 import Food from "../../assets/Food.png";
 import React, { useState } from 'react';
 
+
 import {  Header } from "../../components/header";
 import { default as Slider } from "../../components/CardSlider";
 import { Footer } from "../../components/footer"

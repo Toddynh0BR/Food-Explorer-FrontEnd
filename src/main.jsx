@@ -2,11 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client';
 import GlobalStyle from './style/global';
 
-import { HomeClient } from './pages/HomeClient';
+import { Routes } from './Routes';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
    <GlobalStyle/>
-    <HomeClient></HomeClient>
+    <Routes />
   </React.StrictMode>,
 )
