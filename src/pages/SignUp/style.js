@@ -4,6 +4,12 @@ export const Container = styled.div`
 display: flex;
 justify-content: space-around;
 align-items: center;
+
+@media(max-width: 750px){
+ flex-direction: column;
+ justify-content: center;
+ padding-top: 10rem;
+}
 `
 
 export const Title = styled.div`
@@ -15,6 +21,16 @@ h2 {
  font-size: 4.2rem;
  font-weight: bold;
  color: #FFFFFF;
+}
+
+@media(max-width: 750px){
+ h2 {
+ font-size: 3.7rem;
+ }
+ svg {
+ width: 4.3rem;
+ height: 4.67rem;
+ }
 }
 `
 
@@ -54,6 +70,18 @@ span {
  color: #FFFFFF;
 
  cursor: pointer;
+}
+
+@media(max-width: 750px){
+ margin-top: 0;
+ background: none;
+ gap: 3rem;
+ div, button {
+ width: 31.6rem;
+ }
+ h2 {
+ display: none;
+ }
 }
 `
 

@@ -4,10 +4,11 @@ import { useParams } from 'react-router-dom';
 
 import { Link } from "react-router-dom";
 
+import { Return } from "../../components/returnButton";
 import {  Header } from "../../components/header";
 import { Footer } from "../../components/footer";
-import { Return } from "../../components/returnButton";
 import { Button } from "../../components/button";
+import { Menu } from "../../components/menu";
 import { Tag } from "../../components/tags";
 
 import Mask from "../../assets/Mask group.png";
@@ -24,6 +25,7 @@ import Mask10 from "../../assets/Mask group-10.png";
 import Mask11 from "../../assets/Mask group-11.png";
 
 export function FoodAdmin(){
+ const [menu, setMenu] = useState(false);
  const { id } = useParams();
  const editRoute = `/editplate/${id}`
  const plates = [
@@ -229,13 +231,19 @@ if (!plate) {
 return <div>Prato não encontrado</div>;
 }
 
- const isAdmin = true;
+ const isadmin = true;
 
  return (
     <Container>
+        <Menu
+          close={()=> setMenu(false)}
+          menu={menu}
+          isadmin={isadmin}>
+        </Menu>
       <Header
         title="Novo prato"
-        isadmin={isAdmin}
+        isadmin={isadmin}
+        open={()=> setMenu(true)}
       ></Header>
     
       <Main>
@@ -247,7 +255,7 @@ return <div>Prato não encontrado</div>;
       <Info>
        <h2>{plate.title}</h2>
        <span>{plate.description}</span>
-       <div>
+       <div className="tags">
        {Object.values(plate.tags).map((tag, index) => (
                 <Tag key={index} title={tag} />
         ))}

@@ -30,4 +30,27 @@ div {
  align-items: center;
  gap: 1rem;
 }
+
+@media(max-width: 750px){
+justify-content: center;
+align-items: center;
+width: 100%;
+padding: 0;
+gap: 3rem;
+
+h2 {
+ font-size: 1.5rem;
+}
+img {
+width: 2.2rem;
+height: 1.8rem;
+}
+div {
+ gap: .5rem;
+}
+
+p {
+ font-size: 1.2rem;
+}
+}
 ` 

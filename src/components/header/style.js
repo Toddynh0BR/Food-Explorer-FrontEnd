@@ -39,6 +39,20 @@ svg {
 #out {
     cursor: pointer;
 }
+
+@media(max-width: 750px){
+ height: 11.4rem;
+ 
+ gap: 0;
+
+ button {
+ display: none;
+ }
+
+ #out {
+ display: none;
+ }
+}
 `
 
 export const Input = styled.div`
@@ -75,5 +89,19 @@ input::placeholder{
  font-size: 1.6rem;
  font-weight: normal;
  color: #7C7C8A;
+}
+
+@media(max-width: 750px){
+ display: none;
+ width: 0;
+ height: 0;
+ padding: 0;
+
+ input {
+ display: none;
+ }
+ svg {
+ display: none;
+ }
 }
 `

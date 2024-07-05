@@ -4,15 +4,18 @@ import Food from "../../assets/Food.png";
 import React, { useState } from 'react';
 
 
-import {  Header } from "../../components/header";
 import { default as Slider } from "../../components/CardSlider";
-import { Footer } from "../../components/footer"
+import {  Header } from "../../components/header";
+import { Footer } from "../../components/footer";
+import { Menu } from "../../components/menu";
 
 
 export function HomeClient(){
+    const [menu, setMenu] = useState(false);
     const isAdmin = false;
 
     const ValuePedidos = 0;
+    const MobalPedidos = 0;
 
     const pedidos = `Pedidos (${ValuePedidos})`;
    
@@ -21,10 +24,17 @@ export function HomeClient(){
 
     return(
         <Container>
+          <Menu
+          close={()=> setMenu(false)}
+          menu={menu}
+          isadmin={isAdmin}>
+          </Menu>
           <Header
+         mobaltitle={MobalPedidos}
          title={pedidos}
          icon={PiReceiptBold}
          isadmin={isAdmin}
+         open={()=> setMenu(true)}
          ></Header>
 
           <Main>

@@ -1,30 +1,39 @@
 import { Container, Main, Form } from "./style";
 
 import { FiUpload, FiPlus, FiChevronDown, FiX } from "react-icons/fi";
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState  } from 'react';
+
 import $ from 'jquery';
 import 'jquery-mask-plugin/dist/jquery.mask.min.js';
 
-import { Header } from "../../components/header";
 import { Return } from "../../components/returnButton";
-import { Footer } from "../../components/footer"
+import { Header } from "../../components/header";
 import { Button } from "../../components/button";
+import { Footer } from "../../components/footer";
+import { Menu } from "../../components/menu";
 
 
 export function AddPlate(){
 const inputRef = useRef(null);
+const [menu, setMenu] = useState(false);
 
 useEffect(() => {
     $(inputRef.current).mask("#.##0,00", {reverse: true}); // Exemplo de máscara para CPF
 }, []);
 
-
  const isadmin = true;
+
  return(
     <Container>
+         <Menu
+          close={()=> setMenu(false)}
+          menu={menu}
+          isadmin={isadmin}>
+          </Menu>        
      <Header
      title='Novo prato'
      isadmin={isadmin}
+     open={()=> setMenu(true)}
      ></Header>
 
      <Main>

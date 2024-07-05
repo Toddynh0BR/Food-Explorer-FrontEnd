@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-display: grid;
-grid-template-areas: header, main;
 
+@media (max-width: 750px){
+max-width: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
 `
 
 export const Main = styled.main`
@@ -12,10 +16,25 @@ display: flex;
 flex-direction: column;
 
 padding-top: 10rem;
+@media (max-width: 750px){
+ a {
+ width: 31.6rem;
+ margin: auto;
+ margin-bottom: 2rem;
+ div {
+ margin-left: 0;
+ }
+ }
+ justify-content: center;
+ max-width: 100%;
+margin-bottom: 10rem;
+margin-top: 5rem;
+}
 `
 
 export const Plate = styled.div`
 display: flex;
+justify-content: center;
 align-items: center;
 gap: 4rem;
 
@@ -27,11 +46,27 @@ img {
 }
 
 margin-bottom: 10rem;
+
+@media(max-width: 750px){
+flex-direction: column;
+justify-content: center;
+align-items: normal;
+margin-left: 0;
+margin: auto;
+width: 31.6rem;
+
+img {
+ width: 26.4rem;
+ margin: auto;
+}
+}
+
 `
 
 export const Info = styled.div`
 display: flex;
 flex-direction: column;
+
 gap: 2.4rem;
 
 width: 68.7rem;
@@ -55,7 +90,30 @@ h2, span{
  color: #E1E1E6;
 }
 
+@media(max-width: 750px){
+width: 31.6rem;
+text-align: center;
 
+ h2 {
+ font-size: 2.7rem;
+}  
+span {
+ font-size: 1.6rem;
+ width: 31.6rem;
+}
+
+
+
+.tags {
+    width: 31.6rem;
+    gap: 2.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    div {
+    height: 3.2rem;
+    }
+}
+}
 `
 
 export const Functions = styled.div`
@@ -78,5 +136,26 @@ button {
  padding: .5rem 1.5rem;
 
  margin-left: 3.3rem;
+}
+
+@media(max-width: 750px){
+button {
+ margin-left: 0;
+ width: 18.8rem;
+ height: 3.7rem;
+}
+strong {
+ font-size: 2.2rem;
+}
+svg {
+ font-size: 3rem;
+ color: #FFFFFF;
+ cursor: pointer;
+}
+
+
+div {
+ width: 11.2rem;
+}
 }
 `

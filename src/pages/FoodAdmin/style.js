@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+@media (max-width: 750px){
+max-width: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
 `
 
 export const Main = styled.main`
@@ -9,6 +15,20 @@ display: flex;
 flex-direction: column;
 
 padding-top: 10rem;
+@media (max-width: 750px){
+ a {
+ width: 31.6rem;
+ margin: auto;
+ margin-bottom: 2rem;
+ div {
+ margin-left: 0;
+ }
+ }
+ justify-content: center;
+ max-width: 100%;
+margin-bottom: 10rem;
+margin-top: 5rem;
+}
 `
 
 export const Plate = styled.div`
@@ -24,6 +44,22 @@ img {
 }
 
 margin-bottom: 10rem;
+
+@media(max-width: 750px){
+flex-direction: column;
+justify-content: center;
+align-items: normal;
+margin-left: 0;
+margin: auto;
+width: 31.6rem;
+
+img {
+ width: 26.4rem;
+ margin: auto;
+}
+
+
+}
 `
 
 export const Info = styled.div`
@@ -58,5 +94,33 @@ button {
  padding: .5rem 1.5rem;
 
  margin-top: 2.4rem;
+}
+
+@media(max-width: 750px){
+width: 31.6rem;
+text-align: center;
+
+ h2 {
+ font-size: 2.7rem;
+}  
+span {
+ font-size: 1.6rem;
+ width: 31.6rem;
+}
+
+button {
+ width: 31.6rem;
+
+}
+
+.tags {
+    width: 31.6rem;
+    gap: 2.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    div {
+    height: 3.2rem;
+    }
+}
 }
 `

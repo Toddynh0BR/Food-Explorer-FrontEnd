@@ -1,22 +1,32 @@
 import { Container, Main, Decoration, Plates, Slide } from "./style";
-
+import { useState } from "react";
 
 import Food from "../../assets/Food.png";
 
 import {  Header } from "../../components/header";
 import { default as Slider } from "../../components/CardSlider";
 import { Footer } from "../../components/footer"
+import { Menu } from "../../components/menu";
 
 
 export function HomeAdmin(){
     const isAdmin = true;
+    const MobalPedidos = 0;
+    const [menu, setMenu] = useState(false);
 
     return(
         <Container>
-          <Header
-        title="Novo prato"
-        isadmin={isAdmin}>
+          <Menu
+          close={()=> setMenu(false)}
+          menu={menu}
+          isadmin={isAdmin}>
+          </Menu>
 
+          <Header
+          mobaltitle={MobalPedidos}
+          title="Novo prato"
+          isadmin={isAdmin}
+          open={()=> setMenu(true)}>
           </Header>
 
           <Main>

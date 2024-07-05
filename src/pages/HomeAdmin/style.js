@@ -10,6 +10,10 @@ display: flex;
 flex-direction: column;
 
 padding-top: 10rem;
+
+@media(max-width: 750px) {
+padding-top: 0rem;
+}
 `
 
 export const Decoration = styled.div`
@@ -50,6 +54,33 @@ div {
  color: #E1E1E6;
  }
 }
+
+@media(max-width: 750px){
+ width: 37.6rem;
+ height: 12rem;
+
+ img {
+ width: 19.5rem;
+ height: 14.9rem;
+ margin-top: -2rem;
+ margin-left: -3.5rem;
+ }
+
+
+
+ div {
+ gap: .5rem;
+ width: 20.2rem;
+
+ h2 {
+ font-size: 1.8rem;
+
+ }
+ p {
+ font-size: 1.2rem;
+ }
+ }
+ }
 `
 
 export const Plates = styled.div`
@@ -69,14 +100,22 @@ h2 {
  color: #E1E1E6;
 
 }
+
+@media(max-width: 750px) {
+width: 100%;
+justify-content: center;
+gap: 2rem;
+h2 {
+font-size: 1.8rem;
+padding-left: 3rem;
+}
+}
 `
 
 export const Slide = styled.div`
 position: relative;
 
-h2 {
- font-size: 2.4rem;
-}
+
 
 .sombra {
  position: absolute;

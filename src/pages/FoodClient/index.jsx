@@ -5,10 +5,11 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 
-import {  Header } from "../../components/header";
-import { Footer } from "../../components/footer";
 import { Return } from "../../components/returnButton";
+import {  Header } from "../../components/header";
 import { Button } from "../../components/button";
+import { Footer } from "../../components/footer";
+import { Menu } from "../../components/menu";
 import { Tag } from "../../components/tags";
 
 import Mask from "../../assets/Mask group.png";
@@ -25,7 +26,9 @@ import Mask10 from "../../assets/Mask group-10.png";
 import Mask11 from "../../assets/Mask group-11.png";
 
 export function FoodClient(){
+  const [menu, setMenu] = useState(false);
   const { id } = useParams();
+  const isadmin = false;
 
   const plates = [
     
@@ -229,8 +232,9 @@ export function FoodClient(){
   return <div>Prato não encontrado</div>;
 }
 
- const isAdmin = false;
+
  const ValuePedidos = 0;
+ const MobalPedidos = 0;
 
  const pedidos = `Pedidos (${ValuePedidos})`;
 
@@ -248,14 +252,21 @@ function remove() {
  
  return (
   <Container>
+          <Menu
+          close={()=> setMenu(false)}
+          menu={menu}
+          isadmin={isadmin}>
+          </Menu>
     <Header
+      mobaltitle={MobalPedidos}
       title={pedidos}
       icon={PiReceiptBold}
-      isadmin={isAdmin}
+      isadmin={isadmin}
+      open={()=> setMenu(true)}
     ></Header>
 
     <Main>
-      <Return />
+    <Return class="return"/>
 
       <Plate>
         <img src={plate.image} alt={`imagem de um prato com ${plate.title}`} />
@@ -263,7 +274,7 @@ function remove() {
         <Info>
           <h2>{plate.title}</h2>
           <span>{plate.description}</span>
-          <div>
+          <div className="tags">
           {Object.values(plate.tags).map((tag, index) => (
                 <Tag key={index} title={tag} />
               ))}

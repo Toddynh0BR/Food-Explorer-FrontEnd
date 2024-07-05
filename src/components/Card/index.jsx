@@ -38,7 +38,7 @@ function remove() {
       <Link to={route}>
         <img src={img} alt="imagem do prato" />
         <h2>{title}</h2>
-        <p>{description}</p>
+        <p className="p">{description}</p>
         <span>{price}</span>
       </Link>
         <Functions isadmin={isadmin}>

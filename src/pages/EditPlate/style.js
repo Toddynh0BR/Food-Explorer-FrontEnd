@@ -22,6 +22,29 @@ color: #E1E1E6;
 margin-left: 12.5rem;
 margin-top: 2rem;
 }
+
+@media (max-width: 750px){
+ width: 36.4rem;
+ margin: auto;
+ gap: 2.4rem;
+
+ a {
+ div {
+ margin-left: 0;
+ span {
+ font-size: 1.6rem;
+ }
+ svg {
+ font-size: 2.2rem;
+ }
+ }
+ }
+
+ h2 {
+ margin-left: 0;
+ margin-top: 0;
+ }
+}
 `
 
 export const Form = styled.form`
@@ -62,7 +85,7 @@ margin-bottom: 10rem;
 
  }
 
- 
+
 }
 
 input, textarea {
@@ -90,11 +113,7 @@ input::placeholder, textarea::placeholder {
 }
 
 .Row1 {
- display: flex;
- align-items: center;
- gap: 3.2rem;
 
- 
 #img {
  display: none;
 }
@@ -261,5 +280,78 @@ width: 100%;
 }
 
 
+}
+
+@media (max-width: 750px){
+ gap: 2.4rem;
+ width: 100%;
+ margin-top: 0;
+
+ .Row1, .Row2, .Row3, .Row4 {
+ width: 100%;
+ gap: 2.4rem;
+ flex-direction: column;
+
+ .input-wrapper {
+ width: 100%;
+ }
+ }
+
+.Row1 {
+ .name {
+ div {
+  width: 100%;
+ }
+}  
+
+.category {
+ div {
+ width: 100%;
+ }
+
+}
+
+}
+.Row2 {
+.tags {
+ .Tags {
+ flex-wrap: wrap;
+ height: auto;
+ width: 100%;
+ cursor: auto;
+ }
+ }
+
+ .price {
+ width: 100%;
+ }
+}
+.Row3 {
+.input-wrapper {
+ .description {
+ width: 100%;
+ height: 17.2rem;
+ padding: 1.4rem 1.4rem;
+ textarea {
+ width: 100%;
+ height: 100%;
+ resize: none;
+ }
+ }
+}
+}
+.Row4 {
+flex-direction: row;
+justify-content: space-between;
+ button{
+ width: 17.2rem;
+ font-size: 1.4rem;
+ padding: 1.2rem 2.4rem;
+}
+.excluir{
+ width: 16rem;
+ font-size: 1.4rem;
+}
+}
 }
 `

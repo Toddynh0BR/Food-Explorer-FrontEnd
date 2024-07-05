@@ -1,18 +1,17 @@
 import { Container, Main, Form } from "./style";
 
-import { Link } from "react-router-dom";
-
 import { FiUpload, FiPlus, FiChevronDown, FiX } from "react-icons/fi";
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Test } from "../../scripts/script.js"
 import $ from 'jquery';
 import 'jquery-mask-plugin/dist/jquery.mask.min.js';
 
-import {  Header } from "../../components/header";
 import { Return } from "../../components/returnButton";
-import { Footer } from "../../components/footer"
+import {  Header } from "../../components/header";
 import { Button } from "../../components/button";
+import { Footer } from "../../components/footer";
+import { Menu } from "../../components/menu";
 
 import Mask from "../../assets/Mask group.png";
 import Mask1 from "../../assets/Mask group-1.png";
@@ -28,6 +27,8 @@ import Mask10 from "../../assets/Mask group-10.png";
 import Mask11 from "../../assets/Mask group-11.png";
 
 export function EditPlate(){
+  const [menu, setMenu] = useState(false);
+
     const { id } = useParams();
     const plates = [
        
@@ -255,9 +256,15 @@ useEffect(() => {
  const isadmin = true;
  return(
     <Container>
+       <Menu
+          close={()=> setMenu(false)}
+          menu={menu}
+          isadmin={isadmin}>
+       </Menu>
      <Header
      title='Novo prato'
      isadmin={isadmin}
+     open={()=> setMenu(true)}
      ></Header>
 
      <Main>
@@ -309,7 +316,7 @@ useEffect(() => {
 
             <div class="input-wrapper">
                 <label For="price">Preço</label>
-                <div>
+                <div className="price">
                 <input
                  id="price"
                  ref={inputRef}

@@ -59,6 +59,38 @@ span {
  color: #82F3FF;
  margin-bottom: 1.5rem;
 }
+
+@media (max-width: 750px){
+ width : 21rem;
+ height: 29.2rem;
+ gap: 1rem;
+
+ .pencil {
+ top: 1rem;
+ right: 1rem;
+ font-size: 2.5rem;
+ }
+
+ img {
+ width: 8.8rem;
+ height: 8.8rem;
+ margin-bottom: 1rem;
+ }
+
+ h2 {
+ font-size: 1.4rem;
+ margin-bottom: 1rem;
+ }
+
+ .p {
+ display: none;
+ }
+
+ span {
+ font-size: 1.6rem;
+ margin-bottom: 1rem;
+ }
+}
 `
 
 
@@ -95,5 +127,14 @@ button {
  p {
  margin-bottom: 0;
  }
+}
+
+@media(max-width: 750px){
+flex-direction: column;
+
+button {
+width: 16.2rem;
+height: 3.2rem;
+}
 }
 `

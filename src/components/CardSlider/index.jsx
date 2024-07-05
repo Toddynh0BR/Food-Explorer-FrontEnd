@@ -28,8 +28,8 @@ width: 112.2rem;
   inset -50px 0 100px -5px #000A0F;
 
 
-@media(max-width: 720px){
-  width: 37.6rem;
+@media(max-width: 750px){
+  width: 100%;
 }
 .swiper-button-prev,
 .swiper-button-next {
@@ -46,7 +46,7 @@ function CardSlider({type, isadmin}){
  useEffect( ()=>{
  function handleResize(){
  if(window.innerWidth < 720){
-  setSlidePerView(1.2)
+  setSlidePerView(1.7)
   setNavigation(false)
  }else {
   setSlidePerView(3.5)
