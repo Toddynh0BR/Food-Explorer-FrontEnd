@@ -17,7 +17,7 @@ h2 {
 font-family: 'Poppins', sans-serif;
 font-size: 3.2rem;
 font-weight: normal;
-color: #E1E1E6;
+color:${({ theme }) => theme.COLORS.LIGHT_300};
 
 margin-left: 12.5rem;
 margin-top: 2rem;
@@ -66,7 +66,7 @@ margin-bottom: 10rem;
  label {
  font-size: 1.6rem;
  font-weight: normal;
- color: #C4C4CC;
+ color: ${({ theme }) => theme.COLORS.LIGHT_400};
  }
 
  div {
@@ -75,7 +75,7 @@ margin-bottom: 10rem;
  display: flex;
  align-items: center;
 
- background-color: #0D161B;
+ background-color: ${({ theme }) => theme.COLORS.DARK_800};
  border-radius: .8rem;
  padding: 1.2rem 3.2rem;
  cursor: pointer;
@@ -97,13 +97,13 @@ input, textarea {
 
  font-size: 1.6rem;
  font-weight: normal;
- color: #FFFFFF;
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
 }
 
 input::placeholder, textarea::placeholder {
  font-size: 1.6rem;
  font-weight: normal;
- color: #7C7C8A;
+ color: ${({ theme }) => theme.COLORS.LIGHT_500};
 }
 
 .Row1, .Row2, .Row3, .Row4 {
@@ -126,12 +126,12 @@ input::placeholder, textarea::placeholder {
 
  font-family: 'Poppins', sans-serif;
  font-size: 1.4rem;
- color: #FFFFFF;
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
  cursor: pointer;
 
  svg {
  font-size: 2.4rem;
- color: #FFFFFF;
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
  }
  }
 }
@@ -151,12 +151,12 @@ input::placeholder, textarea::placeholder {
  z-index: 2;
  position: absolute;
  font-size: 2.3rem;
- color: #C4C4CC;
+ color: ${({ theme }) => theme.COLORS.LIGHT_400};
  right: 1.6rem;
  }
  select {
  width: 100%;
- background-color: #0D161B;
+ background-color: ${({ theme }) => theme.COLORS.DARK_800};
  border: none;
  outline: none;
  appearance: none;
@@ -165,7 +165,7 @@ input::placeholder, textarea::placeholder {
  padding-left: 1.6rem;
  font-size: 1.4rem;
  font-weight: normal;
- color: #C4C4CC;
+ color: ${({ theme }) => theme.COLORS.LIGHT_400};
  }
  }
 
@@ -192,7 +192,7 @@ input::placeholder, textarea::placeholder {
  gap: .8rem;
 
  padding: 1rem 1.6rem;
- background-color: #76797B;
+ background-color: ${({ theme }) => theme.COLORS.LIGHT_600};
  border-radius: .8rem;
  cursor: pointer;
  &:hover {
@@ -201,7 +201,7 @@ input::placeholder, textarea::placeholder {
  
  font-size: 1.6rem;
  font-weight: 300;
- color: #FFFFFF;
+ color:${({ theme }) => theme.COLORS.LIGHT_100};
  }
 
  .ADD {
@@ -211,12 +211,12 @@ input::placeholder, textarea::placeholder {
  height: 3.2rem;
  width: 12.2rem;
 
- border: 1px dashed #7C7C8A;
+ border: 1px dashed ${({ theme }) => theme.COLORS.LIGHT_500};
  padding: 1rem 1.6rem;
 
  svg {
  font-size: 1.6rem;
- color: #7C7C8A;
+ color: ${({ theme }) => theme.COLORS.LIGHT_500};
  }
 
  input {
@@ -227,7 +227,7 @@ input::placeholder, textarea::placeholder {
  &::placeholder {
  font-size: 1.6rem;
  font-weight: normal;
- color: #7C7C8A;
+ color: ${({ theme }) => theme.COLORS.LIGHT_500};
  }
  }
  }
@@ -258,7 +258,7 @@ width: 100%;
  justify-content: flex-end;
     
  button{
- background-color: #AB4D55;
+ background-color: ${({ theme }) => theme.COLORS.RED_400};
  width: 18.7rem;
  height: 4.8rem;
 }
@@ -266,7 +266,7 @@ width: 100%;
 .excluir{
  width: 13.5rem;
 
- background-color: #0D161B;
+ background-color: ${({ theme }) => theme.COLORS.DARK_800};
  border: none;
  border-radius: .5rem;
  cursor: pointer;
@@ -276,7 +276,7 @@ width: 100%;
 
  font-family: 'Poppins', sans-serif;
  font-size: 1.4rem;
- color: #FFFFFF;
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
 }
 
 

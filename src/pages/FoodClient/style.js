@@ -87,7 +87,7 @@ span {
 }
 h2, span{
  font-family: 'Poppins', sans-serif;
- color: #E1E1E6;
+ color:${({ theme }) => theme.COLORS.LIGHT_300};
 }
 
 @media(max-width: 750px){
@@ -116,7 +116,7 @@ span {
 }
 `
 
-export const Functions = styled.div`
+export const Configs = styled.div`
 margin-top: 2.4rem;
 
 strong {

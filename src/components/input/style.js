@@ -8,7 +8,7 @@ gap: .8rem;
 label {
  font-size: 1.6rem;
  font-weight: normal;
- color: #C4C4CC;
+ color: ${({ theme }) => theme.COLORS.LIGHT_400};
 }
 
 input {
@@ -20,13 +20,12 @@ input {
 
  font-size: 1.6rem;
  font-weight: normal;
- color: #FFFFFF;
-
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
 }
 input::placeholder{
  font-size: 1.6rem;
  font-weight: normal;
- color: #7C7C8A;
+ color: ${({ theme }) => theme.COLORS.LIGHT_800};
 }
 
 &> div {
@@ -38,16 +37,16 @@ align-items: center;
 gap: .5rem;
 
 padding: 1.2rem 1.4rem;
-background-color: #0D1D25;
+color: ${({ theme }) => theme.COLORS.DARK_900};
 border-radius: .8rem;
 }
 
 svg {
- color: #C4C4CC;
+ color: ${({ theme }) => theme.COLORS.LIGHT_400};
 }
 
 div:focus-within {
- border: 1px solid #FFFFFF;
+ border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_100};
  background: transparent;
 }
 `

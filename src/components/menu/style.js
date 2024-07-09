@@ -4,45 +4,44 @@ export const Container = styled.div`
 width: 100%;
 height: 100%;
 
-background-color: #000A0F;
+display: flex;
+flex-direction: column;
+
+background-color: ${({ theme }) => theme.COLORS.DARK_400};
 position: fixed;
-left: -100%;
 
 z-index: 100;
+left: -100%;
 &[data-menu-open="true"]{
  left: 0;
 }
 
 a {
  text-decoration: none;
- color:  #E1E1E6;
+ color: ${({ theme }) => theme.COLORS.LIGHT_300};
 }
 
 header {
  width: 100%;
  height: 11.4rem;
 
- background-color: #00111A;
- padding-top: 7rem;
-}
-
-.title {
- width: 36rem;
- margin: auto;
-
  display: flex;
  align-items: center;
  gap: 1.6rem;
 
+ background-color: ${({ theme }) => theme.COLORS.DARK_600};
+ padding-left: 1rem;
+ padding-top: 7rem;
+
 svg {
- color: white;
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
  font-size: 2.5rem;
 }
 
 h2 {
  font-size: 2.1rem;
  font-weight: 400;
- color: white;
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
 }
 }
 
@@ -51,12 +50,13 @@ h2 {
 }
 
 main {
- width: 37.2rem;
- height: 71%;
- margin: auto;
+ width: 100%;
+ flex: 1;
  margin-top: 4rem;
+ padding: 1rem;
 
  display: flex;
+ align-items: center;
  flex-direction: column;
 
  .button {
@@ -64,13 +64,13 @@ main {
  height: 5.4rem;
 
  padding: 1rem;
- border-bottom: 0.5px solid #192227;
+ border-bottom: 0.5px solid ${({ theme }) => theme.COLORS.DARK_1000};
  border-width: thin;
 
  font-family: 'Poppins', sans-serif;
  font-size: 2.4rem;
  font-weight: lighter;
- color: #E1E1E6;
+ color: ${({ theme }) => theme.COLORS.LIGHT_300};
 
  p {
  cursor: pointer;
@@ -88,11 +88,11 @@ display: flex;
 align-items: center;
 gap: 1rem;
 padding: 1.2rem 1.4rem;
-background-color: #0D1D25;
+background-color: ${({ theme }) => theme.COLORS.DARK_900};
 border-radius: .5rem;
 svg {
  font-size: 2.3rem;
- color: #C4C4CC;
+ color: ${({ theme }) => theme.COLORS.LIGHT_300};
 }
 input {
  width: 100%;
@@ -103,13 +103,13 @@ input {
 
  font-size: 1.6rem;
  font-weight: normal;
- color: #FFFFFF;
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
 
 }
 input::placeholder{
  font-size: 1.6rem;
  font-weight: normal;
- color: #7C7C8A;
+ color: ${({ theme }) => theme.COLORS.LIGHT_700};
 }
 
 `

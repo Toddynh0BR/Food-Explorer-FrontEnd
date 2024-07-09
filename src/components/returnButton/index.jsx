@@ -6,7 +6,7 @@ import { PiCaretLeft } from "react-icons/pi";
 
 export function Return(){
     return(
-        <Link to="/Food-Explorer-FrontEnd/">
+        <Link to="/">
         <Container>
          <PiCaretLeft />
          <span>voltar</span>

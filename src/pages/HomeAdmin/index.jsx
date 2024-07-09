@@ -40,7 +40,7 @@ export function HomeAdmin(){
            </Decoration>
           
            <Plates>
-            <h2>Refeições</h2>
+            <h3>Refeições</h3>
            <Slide >
              <div className="sombra"></div>
             <Slider
@@ -48,7 +48,7 @@ export function HomeAdmin(){
             isadmin={isAdmin}
             ></Slider>
            </Slide>
-            <h2>Sobremesas</h2>
+            <h3>Sobremesas</h3>
             <Slide>
              <div className="sombra"></div>
             <Slider
@@ -56,7 +56,7 @@ export function HomeAdmin(){
             isadmin={isAdmin}
             ></Slider>
            </Slide>
-            <h2>Bebidas</h2>
+            <h3>Bebidas</h3>
             <Slide>
              <div className="sombra"></div>
             <Slider

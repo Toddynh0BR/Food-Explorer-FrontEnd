@@ -16,13 +16,13 @@ cursor: pointer;
 
 svg {
  font-size: 3.2rem;
- color: #FFFFFF;
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
 }
 
 span {
  font-family: 'Poppins', sans-serif;
  font-size: 2.4rem;
  font-weight: bold;
- color: #E1E1E6;
+ color: ${({ theme }) => theme.COLORS.LIGHT_300};
 }
 `

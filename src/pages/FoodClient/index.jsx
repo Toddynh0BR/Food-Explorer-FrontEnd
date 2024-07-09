@@ -1,12 +1,13 @@
-import { Container, Main, Plate, Info, Functions } from "./style";
+import { Container, Main, Plate, Info, Configs } from "./style";
+
 import { PiReceiptBold } from "react-icons/pi";
-import { FiMinus, FiPlus } from "react-icons/fi";
+
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-
+import { Functions } from "../../components/functions";
 import { Return } from "../../components/returnButton";
-import {  Header } from "../../components/header";
+import { Header } from "../../components/header";
 import { Button } from "../../components/button";
 import { Footer } from "../../components/footer";
 import { Menu } from "../../components/menu";
@@ -280,16 +281,12 @@ function remove() {
               ))}
           </div>
 
-          <Functions>
-            <div>
-              <FiMinus onClick={remove} />
-              <strong id="itens">{String(itens).padStart(2, '0')}</strong>
-              <FiPlus onClick={add} />
-            </div>
+          <Configs>
+            <Functions></Functions>
             <Button
               title={`incluir ∙ ${plate.price}`}
             ></Button>
-          </Functions>
+          </Configs>
 
         </Info>
 

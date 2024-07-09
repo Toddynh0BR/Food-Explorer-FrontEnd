@@ -11,7 +11,7 @@ export const Container = styled.button`
 
  border: none;
  border-radius: .5rem;
- background-color: #750310;
+ background-color: ${({ theme }) => theme.COLORS.RED_100};
  padding: 1.2rem 3.2rem;
 
  cursor: pointer;
@@ -25,14 +25,14 @@ export const Container = styled.button`
  }
 
  svg {
- font-size: 2.4rem;
- color: #FFFFFF;
+ font-size: 3rem;
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
  }
 
  p {
  font-size: 1.4rem;
  font-weight: 400;
- color: #FFFFFF;
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
  font-family: "Poppins", sans-serif;
  }
  `

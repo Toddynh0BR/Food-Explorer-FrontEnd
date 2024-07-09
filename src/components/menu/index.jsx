@@ -12,10 +12,8 @@ export function Menu({isadmin, menu, close}){
  return(
     <Container isadmin={isadmin} data-menu-open={menu}>
      <header>
-        <div className="title">
         <FiX onClick={close}></FiX>
         <h2>Menu</h2>
-        </div>
      </header>
 
      <main>

@@ -45,19 +45,19 @@ div {
  font-family: 'Poppins', sans-serif;
  font-size: 4rem;
  font-weight: 500;
- color: #E1E1E6;
+ color: ${({ theme }) => theme.COLORS.LIGHT_300};
  }
  p {
  font-size: 1.6rem;
  font-weight: 300;
- color: #E1E1E6;
+ color: ${({ theme }) => theme.COLORS.LIGHT_300};
  }
 
 
 }
 
 @media(max-width: 750px){
- width: 37.6rem;
+ width: 95%;
  height: 12rem;
 
  img {
@@ -94,12 +94,11 @@ flex-direction: column;
 gap: 2.3rem;
 
 
-h2 {
+h3 {
  font-family: 'Poppins', sans-serif;
  font-size: 3.2rem;
  font-weight: 500;
- color: #E1E1E6;
-
+ color: ${({ theme }) => theme.COLORS.LIGHT_300};
 }
 
 @media(max-width: 750px) {
@@ -127,6 +126,4 @@ width: 100%;
              inset -30px 0 50px -5px rgba(0, 10, 15, 0.8);
             
 }
-             
-
 `

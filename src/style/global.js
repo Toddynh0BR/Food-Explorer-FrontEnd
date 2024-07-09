@@ -31,7 +31,7 @@ export default createGlobalStyle`
 }
 
 body {
- background-color: #000A0F;
+ background-color:  ${({ theme }) => theme.COLORS.DARK_400};
 
 
 }

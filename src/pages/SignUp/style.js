@@ -20,7 +20,7 @@ gap: 2rem;
 h2 {
  font-size: 4.2rem;
  font-weight: bold;
- color: #FFFFFF;
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
 }
 
 @media(max-width: 750px){
@@ -45,13 +45,13 @@ gap: 3.2rem;
 
 padding: 6.4rem;
 border-radius: 1.6rem;
-background-color: #001119;
+background-color: ${({ theme }) => theme.COLORS.DARK_700};
 
 h2 {
  font-family: 'Poppins', sans-serif;
  font-size: 3.2rem;
  font-weight: 400;
- color: #FFFFFF;
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
 }
 
 div {
@@ -67,7 +67,7 @@ span {
  font-family: 'Poppins', sans-serif;
  font-size: 1.4rem;
  font-weight: 400;
- color: #FFFFFF;
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
 
  cursor: pointer;
 }

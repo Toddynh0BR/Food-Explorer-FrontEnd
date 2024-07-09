@@ -9,20 +9,19 @@ margin-bottom: 0;
 display: flex;
 align-items: center;
 justify-content: space-between;
-
-background-color: #00111A;
+background-color:${({ theme }) => theme.COLORS.DARK_600};
 padding: 0 12.3rem ;
 
 h2 {
  font-size: 2.4rem;
  font-weight: bold;
- color: #4D585E;
+ color: ${({ theme }) => theme.COLORS.LIGHT_700};
 }
 
 p {
  font-size: 1.4rem;
  font-weight: 400;
- color: #FFFAF1;
+ color: ${({ theme }) => theme.COLORS.LIGHT_200}
 }
 
 div {
@@ -48,7 +47,6 @@ height: 1.8rem;
 div {
  gap: .5rem;
 }
-
 p {
  font-size: 1.2rem;
 }

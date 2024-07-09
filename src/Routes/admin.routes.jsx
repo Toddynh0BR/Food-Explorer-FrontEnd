@@ -8,7 +8,7 @@ import { AddPlate } from '../pages/AddPlate'
 export function AdminRoutes() {
   return (
     <Routes basename="/Food-Explorer-FrontEnd">
-      <Route path="/Food-Explorer-FrontEnd/" element={<HomeAdmin />} />
+      <Route path="/" element={<HomeAdmin />} />
       <Route path="/plate/:id" element={<FoodAdmin />} />
       <Route path="/editplate/:id" element={<EditPlate />} />
       <Route path="/addplate" element={<AddPlate />} />

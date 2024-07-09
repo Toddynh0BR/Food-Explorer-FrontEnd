@@ -24,8 +24,8 @@ const Styles = styled.main`
 width: 112.2rem;
 
 
-  box-shadow: inset 50px 0 100px -5px #000A0F,
-  inset -50px 0 100px -5px #000A0F;
+  box-shadow: inset 50px 0 100px -5px ${({ theme }) => theme.COLORS.DARK_400},
+  inset -50px 0 100px -5px  ${({ theme }) => theme.COLORS.DARK_400};
 
 
 @media(max-width: 750px){
@@ -33,7 +33,7 @@ width: 112.2rem;
 }
 .swiper-button-prev,
 .swiper-button-next {
- color: white; 
+ color: ${({ theme }) => theme.COLORS.LIGHT_100}; 
  z-index: 100;
 }
 `
@@ -46,7 +46,7 @@ function CardSlider({type, isadmin}){
  useEffect( ()=>{
  function handleResize(){
  if(window.innerWidth < 720){
-  setSlidePerView(1.7)
+  setSlidePerView(1.8)
   setNavigation(false)
  }else {
   setSlidePerView(3.5)
@@ -188,7 +188,7 @@ function CardSlider({type, isadmin}){
   <Styles> 
     <Swiper
       slidesPerView={slidePerView} 
-      spaceBetween={0} 
+      spaceBetween={30} 
       loop={true}
       pagination={{ clickable: true }}
       navigation={navigation}

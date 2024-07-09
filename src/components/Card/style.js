@@ -13,9 +13,8 @@ position: relative;
 width: 30.4rem;
 height: 46.2rem;
 
-
-background-color: #00070A;
-border: 1px solid #000204;
+background-color: ${({ theme }) => theme.COLORS.DARK_200};
+border: 1px solid ${({ theme }) => theme.COLORS.DARK_300};
 border-radius: .8rem;
 
 
@@ -30,7 +29,7 @@ filter: brightness(135%);
  right: 1.5rem;
 
  font-size: 3rem;
- color: #E1E1E6;
+ color: ${({ theme }) => theme.COLORS.LIGHT_400};
  cursor: pointer;
  display: ${props => (props.isadmin ? 'flex' : 'none')};
 }
@@ -45,19 +44,41 @@ h2 {
  font-family: 'Poppins', sans-serif;
  font-size: 2.4rem;
  font-weight: bold;
+ color: ${({ theme }) => theme.COLORS.LIGHT_300};
  margin-bottom: 1.5rem;
 }
-p {
+
+.description {
+ width: 25.6rem;
+ min-height: 4.4rem;
+  
  font-size: 1.4rem;
  font-weight: 300;
- color: #C4C4CC;
+ color: ${({ theme }) => theme.COLORS.LIGHT_400};
  margin-bottom: 1.5rem;
+
+ overflow: hidden; 
+ text-overflow: ellipsis;
+ display: -webkit-box;
+-webkit-line-clamp: 3; 
+-webkit-box-orient: vertical;
 }
+
 span {
  font-size: 3.2rem;
  font-weight: 300;
- color: #82F3FF;
+ color: ${({ theme }) => theme.COLORS.ESPECIAL_200};
  margin-bottom: 1.5rem;
+}
+
+button {
+ width: 9.2rem;
+ height: 4.8rem;
+ padding: .5rem 1.5rem;
+ cursor: pointer;
+ p {
+ margin-bottom: 0;
+ }
 }
 
 @media (max-width: 750px){
@@ -80,9 +101,10 @@ span {
  h2 {
  font-size: 1.4rem;
  margin-bottom: 1rem;
+ padding-left: 0;
  }
 
- .p {
+ .description {
  display: none;
  }
 
@@ -90,51 +112,23 @@ span {
  font-size: 1.6rem;
  margin-bottom: 1rem;
  }
-}
-`
-
-
-export const Functions = styled.div`
-
- display: ${props => (props.isadmin ? 'none' : 'flex')};
- align-items: center;
- gap: 1rem;
-
- div {
- display: flex;
- align-items: center;
- gap: 1rem;
-}
-
-strong {
-font-size: 2rem;
-font-weight: bold;
-color: #E1E1E6;
-
-}
-
-svg {
- font-size: 2rem;
- color: #FFFFFF;
- cursor: pointer;
-}
-
-button {
- width: 9.2rem;
- height: 4.8rem;
- padding: .5rem 1.5rem;
- cursor: pointer;
- p {
- margin-bottom: 0;
- }
-}
-
-@media(max-width: 750px){
-flex-direction: column;
 
 button {
 width: 16.2rem;
 height: 3.2rem;
 }
 }
+
+`
+
+
+export const Configs = styled.div`
+
+ display: ${props => (props.isadmin ? 'none' : 'flex')};
+ align-items: center;
+ gap: 1rem;
+
+ @media(max-width: 750px){
+ flex-direction: column;
+ }
 `
