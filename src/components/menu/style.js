@@ -11,6 +11,7 @@ background-color: ${({ theme }) => theme.COLORS.DARK_400};
 position: fixed;
 
 z-index: 100;
+top: 0;
 left: -100%;
 &[data-menu-open="true"]{
  left: 0;
@@ -47,6 +48,10 @@ h2 {
 
 .admin {
  display: ${props => (props.isadmin ? 'flex' : 'none')};
+}
+
+.client {
+ display: ${props => (props.isadmin ? 'none' : 'flex')};
 }
 
 main {

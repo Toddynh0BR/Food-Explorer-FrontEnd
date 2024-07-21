@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div`
 display: flex;
 flex-direction: column;
+
 gap: .8rem;
+
 
 label {
  font-size: 1.6rem;
@@ -38,6 +40,7 @@ gap: .5rem;
 
 padding: 1.2rem 1.4rem;
 color: ${({ theme }) => theme.COLORS.DARK_900};
+background-color: ${({ theme }) => theme.COLORS.DARK_900};
 border-radius: .8rem;
 }
 

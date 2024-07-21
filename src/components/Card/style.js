@@ -29,9 +29,14 @@ filter: brightness(135%);
  right: 1.5rem;
 
  font-size: 3rem;
- color: ${({ theme }) => theme.COLORS.LIGHT_400};
+
  cursor: pointer;
  display: ${props => (props.isadmin ? 'flex' : 'none')};
+
+ a {
+ text-decoration: none;
+ color: ${({ theme }) => theme.COLORS.LIGHT_400};
+ }
 }
 
 img {
@@ -119,6 +124,26 @@ height: 3.2rem;
 }
 }
 
+`
+
+export const Love = styled.div`
+ position: absolute;
+ top: 1.5rem;
+ right: 1.5rem;
+ display: ${props => (props.isadmin ? 'none' : 'flex')};
+
+ .Love {
+ display: ${props => (props.isfavorite ? 'flex' : 'none')};
+ }
+ .noLove {
+ display: ${props => (props.isfavorite ? 'none' : 'flex')};
+ }
+
+svg {
+ font-size: 3rem;
+ color: ${({ theme }) => theme.COLORS.LIGHT_300};
+ cursor: pointer;
+}
 `
 
 

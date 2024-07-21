@@ -3,16 +3,16 @@ import { useState } from "react";
 
 import Food from "../../assets/Food.png";
 
-import {  Header } from "../../components/header";
 import { default as Slider } from "../../components/CardSlider";
-import { Footer } from "../../components/footer"
+import {  Header } from "../../components/header";
+import { Footer } from "../../components/footer";
 import { Menu } from "../../components/menu";
 
 
 export function HomeAdmin(){
-    const isAdmin = true;
-    const MobalPedidos = 0;
-    const [menu, setMenu] = useState(false);
+  const [menu, setMenu] = useState(false);
+  const isAdmin = true;
+
 
     return(
         <Container>
@@ -23,8 +23,6 @@ export function HomeAdmin(){
           </Menu>
 
           <Header
-          mobaltitle={MobalPedidos}
-          title="Novo prato"
           isadmin={isAdmin}
           open={()=> setMenu(true)}>
           </Header>
@@ -52,7 +50,7 @@ export function HomeAdmin(){
             <Slide>
              <div className="sombra"></div>
             <Slider
-            type="sobremesas"
+            type="sobremesa"
             isadmin={isAdmin}
             ></Slider>
            </Slide>
@@ -60,7 +58,7 @@ export function HomeAdmin(){
             <Slide>
              <div className="sombra"></div>
             <Slider
-            type="bebidas"
+            type="bebida"
             isadmin={isAdmin}
             ></Slider>
            </Slide>

@@ -1,5 +1,4 @@
 import { Container, Main, Decoration, Plates, Slide } from "./style";
-import { PiReceiptBold } from "react-icons/pi";
 import Food from "../../assets/Food.png";
 import React, { useState } from 'react';
 
@@ -14,14 +13,6 @@ export function HomeClient(){
     const [menu, setMenu] = useState(false);
     const isAdmin = false;
 
-    const ValuePedidos = 0;
-    const MobalPedidos = 0;
-
-    const pedidos = `Pedidos (${ValuePedidos})`;
-   
-    const [itens, setItens] = useState(0);
-   
-
     return(
         <Container>
           <Menu
@@ -30,9 +21,6 @@ export function HomeClient(){
           isadmin={isAdmin}>
           </Menu>
           <Header
-         mobaltitle={MobalPedidos}
-         title={pedidos}
-         icon={PiReceiptBold}
          isadmin={isAdmin}
          open={()=> setMenu(true)}
          ></Header>
@@ -60,7 +48,7 @@ export function HomeClient(){
             <Slide>
              <div className="sombra"></div>
             <Slider
-            type="sobremesas"
+            type="sobremesa"
             isadmin={isAdmin}
             ></Slider>
            </Slide>
@@ -68,7 +56,7 @@ export function HomeClient(){
             <Slide>
              <div className="sombra"></div>
             <Slider
-            type="bebidas"
+            type="bebida"
             isadmin={isAdmin}
             ></Slider>
            </Slide>

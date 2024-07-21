@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
 
 @media (max-width: 750px){
-max-width: 100vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -25,10 +24,9 @@ padding-top: 10rem;
  margin-left: 0;
  }
  }
+ width: 100%;
+ margin-bottom: 5rem;
  justify-content: center;
- max-width: 100%;
-margin-bottom: 10rem;
-margin-top: 5rem;
 }
 `
 
@@ -45,7 +43,7 @@ img {
  width: 39rem;
 }
 
-margin-bottom: 10rem;
+margin-bottom: 5rem;
 
 @media(max-width: 750px){
 flex-direction: column;

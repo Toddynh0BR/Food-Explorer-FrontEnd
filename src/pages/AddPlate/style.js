@@ -157,6 +157,7 @@ input::placeholder, textarea::placeholder {
  font-size: 2.3rem;
  color: ${({ theme }) => theme.COLORS.LIGHT_400};
  right: 1.6rem;
+ pointer-events: none;
  }
  select {
  width: 100%;

@@ -21,19 +21,43 @@ input {
 > div {
  display: flex;
  align-items: center;
- gap: 1rem;
+ gap: 2rem;
+
+ .extra {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: ${({ theme }) => theme.COLORS.LIGHT_300};
+    cursor: pointer;
+  }
+
+  .F {
+    display: ${props => (props.isadmin ? 'none' : 'flex')};;
+  }
+}
+
+&[data-open-favorites="true"]{
+  div {
+   .F {
+    font-weight: 600;
+   }
+  }
+}
+&[data-open-historic="true"]{
+  div {
+   .H {
+    font-weight: 600;
+   }
+  }
 }
 
 button {
  height:  ${props => (props.isadmin ? '4.8rem' : '5.6rem')};
  width:21.6rem;
- margin-right: 3rem;
 }
 
 svg {
  font-size: 3rem;
  color: #FFFFFF;
-
 }
 
 #out {
@@ -49,6 +73,9 @@ svg {
  display: none;
  }
 
+ .extra {
+ display: none;
+ }
  #out {
  display: none;
  }
@@ -84,6 +111,8 @@ export const Title = styled.div`
     font-weight: bold;
     color: #FFFFFF;
   }
+
+  
 
   span {
     font-size: 1.2rem;
@@ -155,14 +184,14 @@ export const Title = styled.div`
 
 export const Input = styled.div`
 height: 4.8rem;
-width: 58.1rem;
+width: 32rem;
 
 display: flex;
 align-items: center;
 justify-content: center ;
 gap: 1rem;
 
-padding: 1.2rem 5rem 1.2rem 13rem;
+padding: 1rem;
 background-color: #0D1D25;
 border-radius: .5rem;
 svg {

@@ -1,14 +1,17 @@
 import { Container, Input } from "./style";
-import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 import React from 'react';
+
+import { useAuth } from "../../hooks/auth";
 
 import { FiX, FiSearch } from "react-icons/fi";
 import { Footer } from "../footer"
 
-
-
 export function Menu({isadmin, menu, close}){
+
+  const { Logout } = useAuth();
+
  return(
     <Container isadmin={isadmin} data-menu-open={menu}>
      <header>
@@ -28,9 +31,25 @@ export function Menu({isadmin, menu, close}){
         </Link>
       </div>
 
-      <div className="button">
-        <p>Sair</p>
+      <div className="button client">
+       <Link to="/favorites">
+        <p>Favoritos</p>
+       </Link>
       </div>
+
+      <div className="button">
+       <Link to="/historic">
+        <p>Histórico</p>
+       </Link>
+      </div>
+
+      
+      <div className="button" >
+      <Link to="/">
+        <p onClick={Logout}>Sair</p>
+      </Link>
+      </div>
+     
      </main>
 
      <Footer />

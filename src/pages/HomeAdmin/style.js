@@ -123,3 +123,4 @@ position: relative;
  box-shadow: inset 30px 0 50px -5px rgba(0, 10, 15, 0.8),inset -30px 0 50px -5px rgba(0, 10, 15, 0.8);     
 }            
 `
+

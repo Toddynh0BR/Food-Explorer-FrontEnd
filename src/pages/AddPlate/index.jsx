@@ -25,15 +25,15 @@ useEffect(() => {
 
  return(
     <Container>
-         <Menu
-          close={()=> setMenu(false)}
-          menu={menu}
-          isadmin={isadmin}>
-          </Menu>        
+      <Menu
+       close={()=> setMenu(false)}
+       menu={menu}
+       isadmin={isadmin}>
+     </Menu>
+
      <Header
-     title='Novo prato'
-     isadmin={isadmin}
-     open={()=> setMenu(true)}
+      isadmin={isadmin}
+      open={()=> setMenu(true)}
      ></Header>
 
      <Main>
@@ -61,12 +61,12 @@ useEffect(() => {
         <div class="input-wrapper category">
             <label For="category">Categoria</label>
             <div>
-            <select name="Categoria" id="category">
+             <select name="Categoria" id="category">
                 <option value="Refeição">Refeição</option>
                 <option value="Sobremesa">Sobremesa</option>
                 <option value="Bebida">Bebida</option>
-            </select>
-            <FiChevronDown For="Categoria"/>
+             </select>
+             <FiChevronDown For="Categoria"/>
             </div>
         </div>
         </div>
