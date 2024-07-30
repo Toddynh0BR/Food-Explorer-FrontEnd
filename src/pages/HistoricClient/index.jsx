@@ -23,8 +23,9 @@ export function HistoricClient() {
 
   useEffect(() => {
     fetchOrders();
+    window.scrollTo(0, 0);
   }, []);
-  
+
 
   let haveOrders
   if (response.length == 0) {

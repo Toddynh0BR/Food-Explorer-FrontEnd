@@ -14,6 +14,7 @@ import { Menu } from "../../components/menu";
 export function Favorites(){
   const [plates, setPlates] = useState({});
   const [menu, setMenu] = useState(false);
+  const { user } = useAuth();
   const InFavorites = true;
   const isAdmin = false;
 
@@ -26,6 +27,10 @@ export function Favorites(){
     useEffect(() => {
       fetchFavorites();
     }, [plates]);
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
     const ValueFavorites = plates.length
 
@@ -51,7 +56,7 @@ export function Favorites(){
           <div className="Favorites">
                 {Object.values(plates).map((plate) => (
                 <div key={plate.id} className="Favorite">
-                    <img src={Mask} alt="imagem do prato" />
+                    <img src={`${api.defaults.baseURL}/file/${plate.img}`} alt="imagem do prato" />
                  <div className="info">
                    <p>{plate.name}</p>
                    <span onClick={async ()=> {

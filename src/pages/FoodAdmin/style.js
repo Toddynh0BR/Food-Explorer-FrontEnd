@@ -10,7 +10,7 @@ justify-content: center;
 `
 
 export const Main = styled.main`
-height: 100%;
+height: 95vh;
 display: flex;
 flex-direction: column;
 

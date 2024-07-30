@@ -3,10 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { api } from "../../services/api";
 import { Link } from "react-router-dom";
 
-import { HiOutlineClock } from "react-icons/hi2";
 import { PiReceiptLight, PiCheckCircle, PiCreditCard, PiForkKnife,  PiCaretLeft } from "react-icons/pi";
+import { HiOutlineClock } from "react-icons/hi2";
 
-import Food from "../../assets/Mask group.png";
 import qrcode from "../../assets/qrcode.png";
 import pix from "../../assets/pix.svg";
 
@@ -14,6 +13,14 @@ import { Button } from "../../components/button";
 import { Header } from "../../components/header";
 import { Footer } from "../../components/footer";
 import { Menu } from "../../components/menu";
+
+function formatPrice(price) {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+    minimumFractionDigits: 2,
+  }).format(price);
+}
 
 export function Payment() {
   const [payment, setPayment] = useState("pix");
@@ -34,6 +41,10 @@ export function Payment() {
   useEffect(() => {
     fetchOrders();
   }, [response]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleDeleteItem = async (orderItemId) => {
     await api.post("/items/delete", { order_id: response.id, order_item_id: orderItemId });
@@ -76,11 +87,11 @@ export function Payment() {
             <div className="orders">
               {Length > 0 ? orders.map(item => (
                 <div className="order" key={item.id}>
-                  <img src={Food} alt="imagem de um prato de comida" />
+                  <img src={`${api.defaults.baseURL}/file/${item.plate_img}`} alt="imagem de um prato de comida" />
                   <div className="plate">
                     <div className="info">
                       <span>{item.quantity}x {item.plate_name}</span>
-                      <p>R${item.plate_price}</p>
+                      <p>{formatPrice(item.plate_price)}</p>
                     </div>
                     <p className='delete' onClick={() => handleDeleteItem(item.id)}>Excluir</p>
                   </div>
@@ -89,7 +100,7 @@ export function Payment() {
                 <h3>Nenhum item adicionado ao pedido</h3>
               )}
             </div>
-            <span className='total'>Total: R$ {response.total}</span>
+            <span className='total'>Total: {formatPrice(response.total)}</span>
             <div className="completeSpace"></div>
             <Button title="Avançar" onClick={() => setMobal("second")}></Button>
           </Items>
@@ -126,7 +137,7 @@ export function Payment() {
 
                   <div className="others">
                     <div className="input-wrapper">
-                      <label htmlFor="Date">Validate</label>
+                      <label htmlFor="Date">Validade</label>
                       <Input
                         placeholder="04/25"
                         autoComplete="off"

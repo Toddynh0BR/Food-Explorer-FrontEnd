@@ -58,16 +58,16 @@ margin: auto;
 margin-top: 3rem;
 margin-bottom: 10rem;
 
-.input-wrapper {
- display: flex;
- flex-direction: column;
- gap: 1.6rem;
-
- label {
+label {
  font-size: 1.6rem;
  font-weight: normal;
  color: ${({ theme }) => theme.COLORS.LIGHT_400};
  }
+
+.input-wrapper {
+ display: flex;
+ flex-direction: column;
+ gap: 1.6rem;
 
  div {
  height: 4.8rem;
@@ -179,11 +179,26 @@ input::placeholder, textarea::placeholder {
 }
 
 .Row2 {
- .tags {
- .Tags {
- padding: .4rem .8rem;
- gap: 1.6rem;
+ align-items: start;
+ .tagsArea {
  width: 83.7rem;
+
+ gap: 1.6rem;
+ display: flex;
+ flex-direction: column;
+ 
+ .Tags {
+ width: 100%;
+
+ background-color: ${({ theme }) => theme.COLORS.DARK_800};
+ padding: .8rem 2rem;
+ border-radius: .8rem;
+    
+ gap: 1.6rem;
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ 
  cursor: auto;
 
  .TAG {
@@ -199,7 +214,10 @@ input::placeholder, textarea::placeholder {
  padding: 1rem 1.6rem;
  background-color:${({ theme }) => theme.COLORS.LIGHT_600};
  border-radius: .8rem;
- cursor: pointer;
+
+ svg {
+    cursor: pointer;
+ }
  &:hover {
  filter: brightness(120%);
  }
@@ -213,11 +231,13 @@ input::placeholder, textarea::placeholder {
  display: flex;
  align-items: center;
  gap: .8rem;
+
  height: 3.2rem;
- width: 12.2rem;
+ width: 15rem;
 
  border: 1px dashed ${({ theme }) => theme.COLORS.LIGHT_500};
  padding: 1rem 1.6rem;
+ border-radius: .8rem;
 
  svg {
  font-size: 1.6rem;
@@ -299,12 +319,18 @@ button {
 
 }
 .Row2 {
-.tags {
+
+.tagsArea {
+ width: 100%;
  .Tags {
  flex-wrap: wrap;
  height: auto;
  width: 100%;
  cursor: auto;
+
+ .ADD {
+ width: 100%;
+ }
  }
  }
 

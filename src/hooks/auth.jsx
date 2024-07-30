@@ -20,12 +20,13 @@ const [data, setData] = useState({});
      localStorage.setItem("@foodexplorer:user", JSON.stringify(user))
      localStorage.setItem("@foodexplorer:token", token)
      
-     api.defaults.headers.authorization = `Bearer ${token}`
+     api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
      setData({user, token})
 
      } catch (error) {
       if(error.response){
         alert(error.response.data.message)
+        
       }else{
         alert("Não foi possivel entrar")
       };
@@ -44,7 +45,7 @@ const [data, setData] = useState({});
        const user = localStorage.getItem("@foodexplorer:user")
 
        if (user && token) {
-        api.defaults.headers.authorization = `Bearer ${token}`
+        api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
         setData({
           token,

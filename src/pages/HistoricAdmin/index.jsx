@@ -26,6 +26,7 @@ export function HistoricAdmin() {
   
   useEffect(() => {
     fetchOrders();
+    window.scrollTo(0, 0);
   }, []);
 
 

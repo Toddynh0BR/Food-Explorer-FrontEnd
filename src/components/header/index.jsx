@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 
 import { FiLogOut, FiSearch, FiMenu } from "react-icons/fi";
 import { PiReceiptLight, PiReceiptBold } from "react-icons/pi";
@@ -14,9 +15,12 @@ import { Button } from "../button";
 export function Header({ isadmin, open, historic, favorites }) {
   const [response, setResponse] = useState({});
   const [orders, setOrders] = useState([]);
+  const navigate = useNavigate();
   const { Logout } = useAuth();
 
+
   async function fetchOrders() {
+    if(!isadmin){
     const response = await api.post("/orders/show");
     
     if (response && response.data) {
@@ -24,11 +28,13 @@ export function Header({ isadmin, open, historic, favorites }) {
       setOrders(response.data.order_items);
     }else {
       setOrders("");
-    }
+    }}
   }
 
   useEffect(() => {
-    fetchOrders();
+    if(!isadmin){
+    fetchOrders()
+    };
   }, [response]);
 
   const ValuePedidos = orders.length;
@@ -37,6 +43,12 @@ export function Header({ isadmin, open, historic, favorites }) {
   const Icon = isadmin ? null : PiReceiptBold;
 
   const route = isadmin ? `/addplate` : "/payment";
+
+  async function Search(event) {
+    if (event.key === 'Enter') {
+        navigate(`/search/${event.target.value}`);
+    }
+  };
 
   return (
     <Container isadmin={isadmin} data-open-favorites={favorites} data-open-historic={historic}>
@@ -62,7 +74,11 @@ export function Header({ isadmin, open, historic, favorites }) {
 
       <Input>
         <FiSearch />
-        <input type="text" placeholder="Busque por pratos ou ingredientes" />
+        <input 
+         type="text" 
+         placeholder="Busque por pratos ou ingredientes" 
+         onKeyDown={Search}
+         />
       </Input>
 
       <div>

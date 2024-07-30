@@ -8,11 +8,11 @@ height: 100%;
 
 export const Main = styled.div`
 width: 113.2rem;
-height: 100vh;
+min-height: 100vh;
 
 margin: auto;
 margin-top: 10rem;
-
+margin-bottom: 10rem;
 
 display: flex;
 flex-direction: column;

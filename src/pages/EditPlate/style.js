@@ -58,16 +58,18 @@ margin: auto;
 margin-top: 3rem;
 margin-bottom: 10rem;
 
+label {
+ font-size: 1.6rem;
+ font-weight: normal;
+ color: ${({ theme }) => theme.COLORS.LIGHT_400};
+ }
+ 
 .input-wrapper {
  display: flex;
  flex-direction: column;
  gap: 1.6rem;
 
- label {
- font-size: 1.6rem;
- font-weight: normal;
- color: ${({ theme }) => theme.COLORS.LIGHT_400};
- }
+
 
  div {
  height: 4.8rem;
@@ -139,6 +141,7 @@ input::placeholder, textarea::placeholder {
 .name {
  div {
  width: 46.3rem;
+ color: red;
 }
 }
 
@@ -175,11 +178,26 @@ input::placeholder, textarea::placeholder {
 }
 
 .Row2 {
- .tags {
- .Tags {
- padding: .4rem .8rem;
- gap: 1.6rem;
+ align-items: start;
+ .tagsArea {
  width: 83.7rem;
+
+ gap: 1.6rem;
+ display: flex;
+ flex-direction: column;
+ 
+ .Tags {
+ width: 100%;
+
+ background-color: ${({ theme }) => theme.COLORS.DARK_800};
+ padding: .8rem 2rem;
+ border-radius: .8rem;
+    
+ gap: 1.6rem;
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ 
  cursor: auto;
 
  .TAG {
@@ -193,27 +211,32 @@ input::placeholder, textarea::placeholder {
  gap: .8rem;
 
  padding: 1rem 1.6rem;
- background-color: ${({ theme }) => theme.COLORS.LIGHT_600};
+ background-color:${({ theme }) => theme.COLORS.LIGHT_600};
  border-radius: .8rem;
- cursor: pointer;
+
+ svg {
+    cursor: pointer;
+ }
  &:hover {
  filter: brightness(120%);
  }
  
  font-size: 1.6rem;
  font-weight: 300;
- color:${({ theme }) => theme.COLORS.LIGHT_100};
+ color: ${({ theme }) => theme.COLORS.LIGHT_100};
  }
 
  .ADD {
  display: flex;
  align-items: center;
  gap: .8rem;
+
  height: 3.2rem;
- width: 12.2rem;
+ width: 15rem;
 
  border: 1px dashed ${({ theme }) => theme.COLORS.LIGHT_500};
  padding: 1rem 1.6rem;
+ border-radius: .8rem;
 
  svg {
  font-size: 1.6rem;
@@ -228,7 +251,7 @@ input::placeholder, textarea::placeholder {
  &::placeholder {
  font-size: 1.6rem;
  font-weight: normal;
- color: ${({ theme }) => theme.COLORS.LIGHT_500};
+ color: #7C7C8A;
  }
  }
  }
@@ -314,12 +337,17 @@ width: 100%;
 
 }
 .Row2 {
-.tags {
+   .tagsArea {
+ width: 100%;
  .Tags {
  flex-wrap: wrap;
  height: auto;
  width: 100%;
  cursor: auto;
+
+ .ADD {
+ width: 100%;
+ }
  }
  }
 

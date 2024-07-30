@@ -1,13 +1,15 @@
 import { Container } from "./style";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { PiCaretLeft } from "react-icons/pi";
 
 
 export function Return(){
+ const navigate = useNavigate();
+    
     return(
-        <Link to="/">
-        <Container>
+        <Link >
+        <Container onClick={() => navigate(-1)}>
          <PiCaretLeft />
          <span>voltar</span>
         </Container>

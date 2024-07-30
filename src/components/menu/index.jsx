@@ -1,7 +1,8 @@
 import { Container, Input } from "./style";
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useAuth } from "../../hooks/auth";
 
@@ -10,7 +11,15 @@ import { Footer } from "../footer"
 
 export function Menu({isadmin, menu, close}){
 
+  const navigate = useNavigate();
   const { Logout } = useAuth();
+
+  async function Search(event) {
+    if (event.key === 'Enter') {
+        navigate(`/search/${event.target.value}`);
+        close()
+    }
+  }
 
  return(
     <Container isadmin={isadmin} data-menu-open={menu}>
@@ -22,7 +31,11 @@ export function Menu({isadmin, menu, close}){
      <main>
      <Input>
         <FiSearch />
-        <input type="text" placeholder="Busque por pratos ou ingredientes" />
+        <input 
+         type="text" 
+         placeholder="Busque por pratos ou ingredientes" 
+         onKeyDown={Search}
+         />
       </Input>
 
       <div className="button admin">

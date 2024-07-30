@@ -79,6 +79,12 @@ svg {
  #out {
  display: none;
  }
+
+ div {
+   .F {
+    display: none;
+   }
+  }
 }
 `
 

@@ -12,6 +12,10 @@ export default createGlobalStyle`
  font-family: 'Roboto', sans-serif;
  transition: .3s ease-in-out;
 
+ -webkit-font-smoothing: antialiased; 
+ -moz-osx-font-smoothing: grayscale; 
+ font-smooth: always;
+
  ::-webkit-scrollbar {
     width: .5rem;
 }

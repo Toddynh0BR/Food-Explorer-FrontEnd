@@ -1,9 +1,8 @@
 import { Container, Main, Decoration, Plates, Slide } from "./style";
+import { React, useEffect, useState } from "react";
 import Food from "../../assets/Food.png";
-import React, { useState } from 'react';
 
-
-import { default as Slider } from "../../components/CardSlider";
+import { CardSlider } from "../../components/CardSlider";
 import {  Header } from "../../components/header";
 import { Footer } from "../../components/footer";
 import { Menu } from "../../components/menu";
@@ -39,26 +38,26 @@ export function HomeClient(){
             <h3>Refeições</h3>
            <Slide >
              <div className="sombra"></div>
-            <Slider
+            <CardSlider
             type="refeiçao"
             isadmin={isAdmin}
-            ></Slider>
+            ></CardSlider>
            </Slide>
             <h3>Sobremesas</h3>
             <Slide>
              <div className="sombra"></div>
-            <Slider
+            <CardSlider
             type="sobremesa"
             isadmin={isAdmin}
-            ></Slider>
+            ></CardSlider>
            </Slide>
             <h3>Bebidas</h3>
             <Slide>
              <div className="sombra"></div>
-            <Slider
+            <CardSlider
             type="bebida"
             isadmin={isAdmin}
-            ></Slider>
+            ></CardSlider>
            </Slide>
            </Plates>
           </Main>
@@ -68,3 +67,4 @@ export function HomeClient(){
         </Container>
     )
 }
+
