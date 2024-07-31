@@ -188,6 +188,7 @@ export function Payment() {
           </Pay>
         </div>
       </Main>
+      
       <Footer />
     </Container>
   );

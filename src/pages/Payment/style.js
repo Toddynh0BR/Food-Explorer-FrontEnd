@@ -9,7 +9,7 @@ height: 100%;
 
 export const Main = styled.div`
 width: 113.2rem;
-height: 100%;
+min-height: 100vh;
 
 margin: auto;
 margin-top: 10rem;

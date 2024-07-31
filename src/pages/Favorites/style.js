@@ -7,7 +7,7 @@ flex-direction: column;
 
 export const Main = styled.main`
 width: 106.8rem;
-height: 100vh;
+min-height: 100vh;
 
 margin: auto;
 margin-top: 11rem;
