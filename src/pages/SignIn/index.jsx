@@ -12,10 +12,13 @@ export function SignIn(){
  const [email, setEmail] = useState("");
  const [password, setPassword] = useState("");
 
+ const [Loading, setLoading] = useState(false)
+
  const { signIn } = useAuth();
  
  function HandleSignIn(){
     signIn({email, password});
+    setLoading(true)
  }
  return(
   <Container>
@@ -41,7 +44,11 @@ export function SignIn(){
      onChange={e => setPassword(e.target.value)}
     ></Input>
 
-    <Button title='Entrar' onClick={ HandleSignIn }></Button>
+    <Button 
+     title='Entrar' 
+     loading={Loading}
+     onClick={ HandleSignIn }
+     ></Button>
     <Link to="/SignUp">
     <span>Criar uma conta</span>
     </Link>

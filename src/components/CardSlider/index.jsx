@@ -39,7 +39,7 @@ export function CardSlider({ type, isadmin }) {
       const response = await api.post("/plates/show");
       setPlates(response.data.plates);
     } catch (error) {
-      console.error("Error fetching plates: ", error);
+      console.error("Erro ao buscar pratos:", error);
     }
   }
 

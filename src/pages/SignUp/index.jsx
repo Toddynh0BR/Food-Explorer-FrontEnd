@@ -14,6 +14,8 @@ const [name, setName] = useState("");
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 
+const [Loading, setLoading] = useState(false)
+
 
  const validateEmail = (email) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -34,6 +36,7 @@ const [password, setPassword] = useState("");
   await api.post("/users/", {name, email, password})
   .then(()=> {
       alert("Usuário cadastrado com sucesso!")
+      setLoading(true)
       navigate("/");
        })
   .catch(error => {
@@ -77,6 +80,7 @@ const [password, setPassword] = useState("");
 
     <Button
      title='Criar conta'
+     loading={Loading}
      onClick={handleSignUp}
     ></Button>
 
