@@ -3,8 +3,7 @@ import { useAuth } from "../../hooks/auth";
 import { Container, Main } from "./style";
 import { api } from "../../services/api";
 
-import Mask from "../../assets/Mask group.png";
-
+import { Link } from "react-router-dom";
 
 import { Header } from "../../components/header";
 import { Footer } from "../../components/footer";
@@ -14,9 +13,15 @@ import { Menu } from "../../components/menu";
 export function Favorites(){
   const [plates, setPlates] = useState({});
   const [menu, setMenu] = useState(false);
-  const { user } = useAuth();
   const InFavorites = true;
   const isAdmin = false;
+
+  function createRoute(id){
+    const route = `/plate/${id}`
+    return route
+  }
+
+
 
 
     async function fetchFavorites() {
@@ -34,7 +39,6 @@ export function Favorites(){
 
     const ValueFavorites = plates.length
 
-    
 
     return (
         <Container>
@@ -55,10 +59,15 @@ export function Favorites(){
           <h3>Nenhum prato adicionado aos favoritos ainda.</h3>
           <div className="Favorites">
                 {Object.values(plates).map((plate) => (
+                
                 <div key={plate.id} className="Favorite">
+                   <Link to={createRoute(plate.id)}>
                     <img src={`${api.defaults.baseURL}/file/${plate.img}`} alt="imagem do prato" />
+                   </Link>
                  <div className="info">
+                  <Link to={createRoute(plate.id)}>
                    <p>{plate.name}</p>
+                  </Link>
                    <span onClick={async ()=> {
                        await api.delete(`/favorites/${plate.id}`)
                    }}>Remover dos favoritos</span>

@@ -1,7 +1,7 @@
 import { Container, Main, Plate, Info, Configs, Functions } from "./style";
 import React, { useState, useEffect } from 'react';
 
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate  } from 'react-router-dom';
 import { api } from "../../services/api";
 
 import { FiMinus, FiPlus } from "react-icons/fi";
@@ -28,6 +28,8 @@ export function FoodClient(){
   const [total, setTotal] = useState();
   const { id } = useParams();
   const isadmin = false;
+
+  const navigate = useNavigate()
 
   async function fetchPlates() {
     try {
@@ -110,7 +112,9 @@ export function FoodClient(){
           <span>{plate.description}</span>
           <div className="tags">
               {plate.ingredients.map((ingredient) => (
-                <Tag key={ingredient.id} title={ingredient.name} />
+                <Tag key={ingredient.id} title={ingredient.name} onClick={()=> {
+                  navigate(`/search/${ingredient.name}`)
+                }}/>
               ))}
             </div>
 

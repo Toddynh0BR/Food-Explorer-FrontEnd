@@ -34,9 +34,9 @@ const [Loading, setLoading] = useState(false)
   }
   
   await api.post("/users/", {name, email, password})
+  setLoading(true)
   .then(()=> {
       alert("Usuário cadastrado com sucesso!")
-      setLoading(true)
       navigate("/");
        })
   .catch(error => {
@@ -45,6 +45,7 @@ const [Loading, setLoading] = useState(false)
     }else {
       alert("Não foi possivel cadastrar o usuário.")
     }
+    setLoading(false)
   })
 }
  return(

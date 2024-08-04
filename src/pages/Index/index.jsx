@@ -1,6 +1,6 @@
 import { Container, Main, Slide, Plates, Return } from "./style";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -43,6 +43,8 @@ export function Index() {
   const [plates, setPlates] = useState([]);
   const { index } = useParams();
   const isAdmin = false;
+
+  const navigate = useNavigate()
   
   async function fetchPlates() {
     try {
@@ -95,7 +97,7 @@ export function Index() {
       />
       <Main>
 
-        <Link to="/">
+        <Link onClick={() => navigate(-1)}>
          <Return>
           <PiCaretLeft />
           <span>voltar</span>

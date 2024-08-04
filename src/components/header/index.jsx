@@ -57,7 +57,9 @@ export function Header({ isadmin, open, historic, favorites }) {
         <div className="title">
           <img src={Polygon2} alt="imagem de um polígono" />
           <div>
+            <Link to="/">
             <h2>food explorer</h2>
+            </Link>
             {isadmin && <span>admin</span>}
           </div>
         </div>

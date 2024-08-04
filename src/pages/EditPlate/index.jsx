@@ -14,6 +14,14 @@ import { Button } from "../../components/button";
 import { Footer } from "../../components/footer";
 import { Menu } from "../../components/menu";
 
+function formatPrice(price) {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+    minimumFractionDigits: 2,
+  }).format(price);
+}
+
 export function EditPlate(){
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
@@ -136,7 +144,16 @@ export function EditPlate(){
     });
     navigate("/")
    }
-  }
+  };
+
+  async function handleTagsKey(event) {
+    if (event.key === 'Enter') {
+      if (newIngredient.trim() !== "") {
+        setIngredients(prevState => [...prevState, newIngredient]);
+        setNewIngredient("");
+      }
+    }
+  };
 
   if (!plate) {
     return <div>Prato não encontrado</div>;
@@ -232,6 +249,7 @@ export function EditPlate(){
                     placeholder="Adicionar" 
                     value={newIngredient}
                     onChange={e => setNewIngredient(e.target.value)}
+                    onKeyDown={handleTagsKey}
                   />      
                   <FiPlus onClick={handleTags}/>
                 </div>
@@ -247,7 +265,7 @@ export function EditPlate(){
                locale="en-US"
                currency="USD" 
                autoComplete="off"
-               placeholder={plate.price}
+               placeholder={formatPrice(plate.price)}
                onValueChange={(e) => setPrice(e.value)}  
                 />
               </div>
@@ -269,15 +287,16 @@ export function EditPlate(){
         </div>
 
           <div class="Row4">
-            <button
-              className="excluir"
-              onClick={(event) => {
-               event.preventDefault()
-               handleDelete()
-              }}
-            >
-              Excluir prato
-            </button>
+           <button
+            type="button" 
+            className="excluir"
+            onClick={(event) => {
+              event.preventDefault();
+              handleDelete();
+            }}
+           >
+            Excluir prato
+          </button>
             <Button
               title="Salvar alterações"
               className="salvar"
