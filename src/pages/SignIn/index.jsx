@@ -1,7 +1,7 @@
 import { Container, Title, Form} from "./style";
 import Polygon from "../../assets/Polygon1.svg";
 
-import { useAuth } from "../../hooks/auth"
+import { useAuth } from "../../hooks/auth";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
