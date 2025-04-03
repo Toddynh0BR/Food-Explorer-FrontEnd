@@ -33,21 +33,25 @@ const [Loading, setLoading] = useState(false)
     return alert('Email inválido!');
   }
   
-  await api.post("/users/", {name, email, password})
-  setLoading(true)
-  .then(()=> {
-      alert("Usuário cadastrado com sucesso!")
-      navigate("/");
-       })
-  .catch(error => {
+  try {
+    setLoading(true)
+    await api.post("/users/", {name, email, password})
+
+    alert("Usuário cadastrado com sucesso!")
+    navigate("/");
+
+  }catch(error){
+    console.log(error)
     if(error.response){
       alert(error.response.data.message);
     }else {
       alert("Não foi possivel cadastrar o usuário.")
     }
+  } finally{
     setLoading(false)
-  })
-}
+  }
+ };
+ 
  return(
   <Container>
    <Title>
